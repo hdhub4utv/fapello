@@ -69,7 +69,18 @@
 <body>
     <header>
         Fapello: What is Fapello su and Fapello.su?
+        <span class="visitor-count">Readers: <span id="visitorCounter">0</span></span>
     </header>
+    <script>
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            count = count ? parseInt(count) + 1 : 1;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitorCounter').textContent = count;
+        }
+
+        updateVisitorCount();
+    </script>
     <main>
         <section>
             <h2>Introduction</h2>
